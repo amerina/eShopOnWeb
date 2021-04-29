@@ -7,3 +7,12 @@
 
 
 Grunt 是一种 JavaScript 任务运行程序，可自动执行脚本缩减、TypeScript 编译、代码质量“lint”工具、CSS 预处理器以及支持客户端开发所需的所有重复性工作。 
+
+---------------
+
+##### 项目分为两大块:ApplicationCore/Infrastructure/Web是基础的MVC架构Web程序
+
+##### BlazorAdmin/BlazorShared作为Blazor 应用程序
+
+##### PublicApi独立对外提供可访问接口,很可能采用不同的安全机制，其中利用基于 Cookie 的身份验证和 API 的基于表单的标准应用程序很可能使用基于令牌的身份验证
+
