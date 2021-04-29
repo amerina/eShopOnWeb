@@ -16,3 +16,26 @@ Grunt 是一种 JavaScript 任务运行程序，可自动执行脚本缩减、Ty
 
 ##### PublicApi独立对外提供可访问接口,很可能采用不同的安全机制，其中利用基于 Cookie 的身份验证和 API 的基于表单的标准应用程序很可能使用基于令牌的身份验证
 
+
+
+Infrastructure主要提供通用的基础服务和持久化。
+
+1. Config文件夹定义实体与数据库表字段映射
+2. Migrations定义数据库迁移
+3. 在Data文件夹下定义用于持久化的数据库上下文`CatalogContext`和泛型仓储`EfRepository`
+4. Identity文件夹下定义身份数据库上下文
+5. Logging文件夹定义一个日志适配器
+6. Services定义了一个通用的邮件发送基础服务
+
+
+
+ApplicationCore领域层是一个项目的核心，用来定义业务规则并实现。其主要用来实体、值对象、聚合、仓储、领域服务和领域事件等
+
+1. Constants文件夹定义一些常量
+2. Entities文件夹下定义聚合根和相关的实体及值对象
+3. Exceptions文件夹定义公共的异常
+4. Extensions定义一些扩展方法(可以抽象出一个Common层来放扩展方法)
+5. Interfaces文件夹定义领域相关接口
+6. Services文件夹定义领域服务。
+7. Specifications文件夹下是实现的规约模式
+
