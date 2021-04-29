@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Services
 {
+    /// <summary>
+    /// 领域服务用来实现业务逻辑
+    /// </summary>
     public class OrderService : IOrderService
     {
         private readonly IAsyncRepository<Order> _orderRepository;

@@ -4,6 +4,12 @@ using System.Linq;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Entities.BasketAggregate
 {
+    /// <summary>
+    /// 实现一个购物车的聚合根
+    /// 
+    /// Basket聚合根中将Items定位为Readonly,是为了封装集合,避免子项被其他地方更改。
+    /// 
+    /// </summary>
     public class Basket : BaseEntity, IAggregateRoot
     {
         public string BuyerId { get; private set; }

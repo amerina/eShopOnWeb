@@ -10,6 +10,8 @@ Grunt 是一种 JavaScript 任务运行程序，可自动执行脚本缩减、Ty
 
 ---------------
 
+[Getting Started for Beginners · dotnet-architecture/eShopOnWeb Wiki (github.com)](https://github.com/dotnet-architecture/eShopOnWeb/wiki/Getting-Started-for-Beginners)
+
 ##### 项目分为两大块:ApplicationCore/Infrastructure/Web是基础的MVC架构Web程序
 
 ##### BlazorAdmin/BlazorShared作为Blazor 应用程序
@@ -20,6 +22,8 @@ Grunt 是一种 JavaScript 任务运行程序，可自动执行脚本缩减、Ty
 
 Infrastructure主要提供通用的基础服务和持久化。
 
+数据访问和其他基础设施管道代码属于基础设施项目
+
 1. Config文件夹定义实体与数据库表字段映射
 2. Migrations定义数据库迁移
 3. 在Data文件夹下定义用于持久化的数据库上下文`CatalogContext`和泛型仓储`EfRepository`
@@ -29,7 +33,7 @@ Infrastructure主要提供通用的基础服务和持久化。
 
 
 
-ApplicationCore领域层是一个项目的核心，用来定义业务规则并实现。其主要用来实体、值对象、聚合、仓储、领域服务和领域事件等
+ApplicationCore领域层是一个项目的核心，用来定义业务规则并实现。其主要用来实体、值对象、聚合、仓储、领域服务和领域事件等.
 
 1. Constants文件夹定义一些常量
 2. Entities文件夹下定义聚合根和相关的实体及值对象
@@ -38,4 +42,16 @@ ApplicationCore领域层是一个项目的核心，用来定义业务规则并�
 5. Interfaces文件夹定义领域相关接口
 6. Services文件夹定义领域服务。
 7. Specifications文件夹下是实现的规约模式
+
+
+
+Web/WebRazorPages：展现层
+
+其实该项目架构是DDD经典四层架构，只不过其将应用层(Interfaces/Services)集成到展现层中去了.
+
+应用层负责展现层与领域层之间的协调，协调业务对象来执行特定的应用程序。
+
+1. Areas区域用于组织功能在这个示例中Identity 功能使用 Area 进行配置和定制
+2. Extensions扩展是可以向现有对象添加方法的帮助器方法
+3. HealthChecks健康检查是 ASP.NET 核心功能，用于可视化 web 应用程序的状态，以便用户(和 IT 人员)可以确定应用程序是否健康。
 

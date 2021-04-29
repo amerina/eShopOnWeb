@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Interfaces
 {
+    /// <summary>
+    /// 仓储是用来透明持久化领域对象的
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IAsyncRepository<T> where T : BaseEntity, IAggregateRoot
     {
         Task<T> GetByIdAsync(int id, CancellationToken cancellationToken = default);
